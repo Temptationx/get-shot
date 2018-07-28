@@ -2,7 +2,7 @@
 #
 # VERSION 2.5.2
 
-FROM mhart/alpine-node:4
+FROM arm32v6/node:alpine
 MAINTAINER Matteo Collina <hello@matteocollina.com>
 
 RUN mkdir -p /usr/src/app

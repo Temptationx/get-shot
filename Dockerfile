@@ -11,7 +11,7 @@ WORKDIR /usr/src/app/
 COPY ./ /usr/src/app/
 
 RUN apk update && \
-    apk add make gcc g++ python git zeromq-dev krb5-dev && \
+    apk add make gcc g++ python git zeromq-dev krb5-dev libunwind && \
     npm install --unsafe-perm --production && \
     apk del make gcc g++ python git
 

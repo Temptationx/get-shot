@@ -1,19 +1,18 @@
-# Mosca
+# Get Shot
 #
-# VERSION 2.5.2
+# VERSION 0.0.1
 
-FROM arm32v6/node:alpine
-MAINTAINER Matteo Collina <hello@matteocollina.com>
+FROM resin/raspberrypi3-node:onbuild
+MAINTAINER Ning <temptationx@me.com>
 
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app/
 
 COPY ./ /usr/src/app/
 
-RUN apk update && \
-    apk add make gcc g++ python git zeromq-dev krb5-dev libunwind && \
-    npm install --unsafe-perm --production && \
-    apk del make gcc g++ python git
+ENV PORT 80
+
+RUN    	usermod -aG adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,input root && \
+	npm install --unsafe-perm --production
 
 EXPOSE 80
 

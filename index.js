@@ -21,5 +21,5 @@ app.get('/snapshot.png', (req, res)=>{
       });
 })
 
-const port = process.env.GET_SHOT_PORT || 8080
+const port = process.env.PORT || 8080
 app.listen(port, ()=> console.log('Server Listen on ' + port))
